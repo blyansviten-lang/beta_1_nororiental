@@ -35,10 +35,6 @@ public class Registro {
 
 
     @ManyToOne 
-    @JoinColumn(name = "id_usuario", nullable = false)
-    private Usuario usuario;
-
-    @ManyToOne 
     @JoinColumn (name = "id_reto", nullable = false)
     @JsonIgnoreProperties("registros")
     private Reto reto;
