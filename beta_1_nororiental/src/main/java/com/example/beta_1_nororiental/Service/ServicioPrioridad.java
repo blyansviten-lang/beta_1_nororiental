@@ -1,4 +1,4 @@
-package com.example.beta_1_nororiental.services;
+package com.example.beta_1_nororiental.Service;
 
 import java.util.List;
 import java.util.Optional;
