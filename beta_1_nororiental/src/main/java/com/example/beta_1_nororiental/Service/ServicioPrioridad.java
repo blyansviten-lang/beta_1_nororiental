@@ -9,8 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.example.beta_1_nororiental.Repository.IRepositorioPrioridad;
 import com.example.beta_1_nororiental.models.Prioridad;
-import com.example.beta_1_nororiental.repository.IRepositorioPrioridad;
 
 @Service
 public class ServicioPrioridad {

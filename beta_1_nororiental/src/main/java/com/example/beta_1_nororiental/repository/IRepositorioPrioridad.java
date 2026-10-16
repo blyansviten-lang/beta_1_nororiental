@@ -1,4 +1,4 @@
-package com.example.beta_1_nororiental.repository;
+package com.example.beta_1_nororiental.Repository;
 
 import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
