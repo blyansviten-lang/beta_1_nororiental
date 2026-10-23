@@ -12,11 +12,11 @@ import org.springframework.web.server.ResponseStatusException;
 import com.example.beta_1_nororiental.Repository.IRepositorioCategoria;
 import com.example.beta_1_nororiental.models.Categoria;
 
-@Service 
+@Service
 public class ServicioCategoria {
-@Autowired 
-private IRepositorioCategoria repositorioCategoria;
 
+    @Autowired
+    private IRepositorioCategoria repositorioCategoria;
 
     // operaciones que habilitamos ejecutar en nuestra tabla
 
@@ -24,38 +24,36 @@ private IRepositorioCategoria repositorioCategoria;
     public Categoria guardarCategoria(Categoria categoria){
         return repositorioCategoria.save(categoria);
     }
+
     //Buscar
     public List<Categoria> buscar(){
         return this.repositorioCategoria.findAll();
     }
+
     //Actualizar
     public Categoria modificar(UUID id, Categoria datosNuevos){
-         Optional<Categoria> CategoriaBuscada=this.repositorioCategoria.findById(id);
+        Optional<Categoria> CategoriaBuscada=this.repositorioCategoria.findById(id);
         if(CategoriaBuscada.isPresent()){
             //Hay a quien actualizar
-            Categoria categoriaEncontrada=CategoriaBuscada.get();
+            Categoria CategoriaEncontrada=CategoriaBuscada.get();
 
             //Modificando los datos
-            categoriaEncontrada.setNombre(datosNuevos.getNombre());
+            CategoriaEncontrada.setNombre(datosNuevos.getNombre());
             //Guardo los cambios
-            return this.repositorioCategoria.save(categoriaEncontrada);
+            return this.repositorioCategoria.save(CategoriaEncontrada);
         }else{
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Categoria no encontrada");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Categoria no encontrada");
         }
     }
+
     //Eliminar
     public boolean eliminar(UUID id){
-        Optional<Categoria> categoriaBuscada=this.repositorioCategoria.findById(id);
-        if(categoriaBuscada.isPresent()){
+        Optional<Categoria> CategoriaBuscada=this.repositorioCategoria.findById(id);
+        if(CategoriaBuscada.isPresent()){
             this.repositorioCategoria.deleteById(id);
             return true;
-
         }else{
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST ,"No se encontro la categoria");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "No se encontró la categoría");
         }
-
     }
-
-    
 }
-
