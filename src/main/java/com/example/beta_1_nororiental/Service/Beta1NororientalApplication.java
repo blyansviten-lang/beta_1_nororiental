@@ -1,4 +1,4 @@
-package com.example.beta_1_nororiental;
+package com.example.beta_1_nororiental.Service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
