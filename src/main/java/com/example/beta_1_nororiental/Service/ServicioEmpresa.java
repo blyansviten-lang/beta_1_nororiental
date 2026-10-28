@@ -12,10 +12,10 @@ import org.springframework.web.server.ResponseStatusException;
 import com.example.beta_1_nororiental.Repository.IRepositorioEmpresa;
 import com.example.beta_1_nororiental.models.Empresa;
 
-@Service 
+@Service
 public class ServicioEmpresa {
 
-    @Autowired 
+    @Autowired
     private IRepositorioEmpresa repositorioEmpresa;
     // operaciones que habilitamos ejecutar en nuestra tabla
 
